@@ -33,13 +33,13 @@ function saveBingoGrid() {
             clicked: square.classList.contains('clicked')
         });
     });
-    localStorage.setItem('bingoGrid', JSON.stringify(gridState));
-    localStorage.setItem('bingoSeed', document.getElementById('current-seed').textContent);
+    localStorage.setItem('bingoGridGCom', JSON.stringify(gridState));
+    localStorage.setItem('bingoSeedGCom', document.getElementById('current-seed').textContent);
 }
 
 function loadBingoGrid() {
-    const savedGrid = localStorage.getItem('bingoGrid');
-    const savedSeed = localStorage.getItem('bingoSeed');
+    const savedGrid = localStorage.getItem('bingoGridGCom');
+    const savedSeed = localStorage.getItem('bingoSeedGCom');
     if (savedGrid && savedSeed) {
         document.getElementById('current-seed').textContent = savedSeed;
         const gridState = JSON.parse(savedGrid);
